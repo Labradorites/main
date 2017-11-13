@@ -1,5 +1,5 @@
 # Labradorites
-###### /java/seedu/address/commons/events/ui/PersonAddressSelectionChangedEvent.java
+###### \java\seedu\address\commons\events\ui\PersonAddressSelectionChangedEvent.java
 ``` java
 public class PersonAddressSelectionChangedEvent extends BaseEvent {
 
@@ -20,39 +20,7 @@ public class PersonAddressSelectionChangedEvent extends BaseEvent {
     }
 }
 ```
-###### /java/seedu/address/commons/util/StringUtil.java
-``` java
-    /**
-     * Returns true if the {@code sentence} contains the {@code word}.
-     *   Ignores case, matches if sentence contains word.
-     *   <br>examples:<pre>
-     *       containsAny("abcde", "abc") == true
-     *       containsAny("ABcdef", "def") == true
-     *       containsAny("ABcdef", "AC") == false //not a full word match
-     *       </pre>
-     * @param sentence cannot be null
-     * @param word cannot be null, cannot be empty, must be a single word
-     */
-    public static boolean containsAny(String sentence, String word) {
-        requireNonNull(sentence);
-        requireNonNull(word);
-
-        String preppedWord = word.trim();
-        checkArgument(!preppedWord.isEmpty(), "Word parameter cannot be empty");
-        checkArgument(preppedWord.split("\\s+").length == 1, "Word parameter should be a single word");
-
-        String preppedSentence = sentence;
-        String[] wordsInPreppedSentence = preppedSentence.split("\\s+");
-
-        for (String wordInSentence: wordsInPreppedSentence) {
-            if (wordInSentence.contains(preppedWord)) {
-                return true;
-            }
-        }
-        return false;
-    }
-```
-###### /java/seedu/address/logic/commands/FindPhoneCommand.java
+###### \java\seedu\address\logic\commands\FindPhoneCommand.java
 ``` java
 /**
  * Finds and lists all persons in address book whose phone numbers contains any of the argument keywords.
@@ -86,7 +54,7 @@ public class FindPhoneCommand extends Command {
     }
 }
 ```
-###### /java/seedu/address/logic/commands/FindTagCommand.java
+###### \java\seedu\address\logic\commands\FindTagCommand.java
 ``` java
 /**
  * Finds and lists all persons in address book whose tags contains any of the argument keywords.
@@ -121,7 +89,7 @@ public class FindTagCommand extends Command {
     }
 }
 ```
-###### /java/seedu/address/logic/commands/ListTagsCommand.java
+###### \java\seedu\address\logic\commands\ListTagsCommand.java
 ``` java
 /**
  * Lists all unique tags added to AddressBook or PersonListPanel depending on choice to the user.
@@ -138,16 +106,19 @@ public class ListTagsCommand extends Command {
             + "1. To list all tags available in AddressBook: " + COMMAND_WORD + "\n"
             + "2. To list all tags of persons currently shown below: " + COMMAND_WORD + " " + FILTERED + "\n";
 
+    private List<String> listOfTags = null;
     private String option;
 
     public ListTagsCommand(String argument) {
         this.option = argument;
     }
 
+    public List<String> getListOfTags() {
+        return listOfTags;
+    }
+
     @Override
     public CommandResult execute() {
-        List<String> listOfTags = null;
-
         requireNonNull(model);
 
         switch (option) {
@@ -163,12 +134,11 @@ public class ListTagsCommand extends Command {
             return new CommandResult(MESSAGE_NO_TAGS);
         }
 
-        System.out.println(listOfTags);
         return new CommandResult(String.format(MESSAGE_SUCCESS, String.join("\n", listOfTags)));
     }
 }
 ```
-###### /java/seedu/address/logic/parser/FindPhoneCommandParser.java
+###### \java\seedu\address\logic\parser\FindPhoneCommandParser.java
 ``` java
 /**
  * Parses input arguments and creates a new FindPhoneCommand object
@@ -194,7 +164,7 @@ public class FindPhoneCommandParser implements Parser<FindPhoneCommand> {
 
 }
 ```
-###### /java/seedu/address/logic/parser/FindTagCommandParser.java
+###### \java\seedu\address\logic\parser\FindTagCommandParser.java
 ``` java
 /**
  * Parses input arguments and creates a new FindTagCommand object
@@ -220,7 +190,7 @@ public class FindTagCommandParser implements Parser<FindTagCommand> {
 
 }
 ```
-###### /java/seedu/address/logic/parser/ListTagsCommandParser.java
+###### \java\seedu\address\logic\parser\ListTagsCommandParser.java
 ``` java
 /**
  * Parses input arguments and creates a new ListTagsCommand object
@@ -245,24 +215,7 @@ public class ListTagsCommandParser implements Parser<ListTagsCommand> {
 
 }
 ```
-###### /java/seedu/address/model/Model.java
-``` java
-    /**
-     * Returns a unique tags list as {@code List<String>}
-     */
-    List<String> getTagsListAsString(List<Tag> tagStringList);
-
-    /**
-     * Returns list of all unique tags present in AddressBook that are sorted alphabetically
-     */
-    List<Tag> getNormalTagsList();
-
-    /**
-     * Returns list of all unique tags currently present in PersonListPanel that are sorted alphabetically
-     */
-    List<Tag> getFilteredTagsList();
-```
-###### /java/seedu/address/model/ModelManager.java
+###### \java\seedu\address\model\ModelManager.java
 ``` java
     @Override
     public List<String> getTagsListAsString(List<Tag> tagsList) {
@@ -291,7 +244,7 @@ public class ListTagsCommandParser implements Parser<ListTagsCommand> {
         return listOfFilteredTags;
     }
 ```
-###### /java/seedu/address/model/person/Person.java
+###### \java\seedu\address\model\person\Person.java
 ``` java
     @Override
     public String fullTag() {
@@ -325,7 +278,7 @@ public class ListTagsCommandParser implements Parser<ListTagsCommand> {
 
 }
 ```
-###### /java/seedu/address/model/person/PhoneContainsKeywordsPredicate.java
+###### \java\seedu\address\model\person\PhoneContainsKeywordsPredicate.java
 ``` java
 /**
  * Tests that a {@code ReadOnlyPerson}'s {@code Phone} matches any of the keywords given.
@@ -352,11 +305,11 @@ public class PhoneContainsKeywordsPredicate implements Predicate<ReadOnlyPerson>
 
 }
 ```
-###### /java/seedu/address/model/person/ReadOnlyPerson.java
+###### \java\seedu\address\model\person\ReadOnlyPerson.java
 ``` java
     String fullTag();
 ```
-###### /java/seedu/address/model/person/TagContainsKeywordsPredicate.java
+###### \java\seedu\address\model\person\TagContainsKeywordsPredicate.java
 ``` java
 /**
  * Tests that a {@code ReadOnlyPerson}'s {@code Tag} matches any of the keywords given.
@@ -383,7 +336,7 @@ public class TagContainsKeywordsPredicate implements Predicate<ReadOnlyPerson> {
 
 }
 ```
-###### /java/seedu/address/model/tag/Tag.java
+###### \java\seedu\address\model\tag\Tag.java
 ``` java
     /*
      * Returns tag name.
@@ -392,13 +345,13 @@ public class TagContainsKeywordsPredicate implements Predicate<ReadOnlyPerson> {
         return tagName;
     }
 ```
-###### /java/seedu/address/ui/BrowserPanel.java
+###### \java\seedu\address\ui\BrowserPanel.java
 ``` java
     private void loadAddressPage(ReadOnlyPerson person) {
         loadPage(GOOGLE_MAPS_SEARCH_URL_PREFIX + person.getAddress().value.replaceAll(" ", "+"));
     }
 ```
-###### /java/seedu/address/ui/BrowserPanel.java
+###### \java\seedu\address\ui\BrowserPanel.java
 ``` java
     @Subscribe
     private void handlePersonPanelSelectionChangedEvent(PersonPanelSelectionChangedEvent event) {
