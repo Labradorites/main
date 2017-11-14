@@ -1,5 +1,5 @@
 # kikanng
-###### \java\seedu\address\logic\commands\FindEmailCommandTest.java
+###### /java/seedu/address/logic/commands/FindEmailCommandTest.java
 ``` java
 /**
  * Contains integration tests (interaction with the Model) for {@code FindEmailCommand}.
@@ -64,8 +64,7 @@ public class FindEmailCommandTest {
      *     - the {@code FilteredList<ReadOnlyPerson>} is equal to {@code expectedList}<br>
      *     - the {@code AddressBook} in model remains the same after executing the {@code command}
      */
-    private void assertCommandSuccess(
-            FindEmailCommand command, String expectedMessage, List<ReadOnlyPerson> expectedList) {
+    private void assertCommandSuccess(FindEmailCommand command, String expectedMessage, List<ReadOnlyPerson> expectedList) {
         AddressBook expectedAddressBook = new AddressBook(model.getAddressBook());
         CommandResult commandResult = command.execute();
 

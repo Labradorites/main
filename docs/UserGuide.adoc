@@ -291,7 +291,7 @@ Returns any person having names starting with `john` and `jasmin`
 * `xFind P/ 456` +
 Returns any person having phone number containg `456`
 
-// tag::gAddress[]
+// tag::googleAddress[]
 === Searching person's address on Google Maps `gAddress`
 
 Searches person's address on Google Maps with respect to `INDEX` keyed in. +
@@ -307,7 +307,7 @@ Format: `gAddress INDEX`
 BrowserPanel now shows searched address of person at index 1 in Google Maps.
 * `gAddress 3` +
 BrowserPanel now shows searched address of person at index 3 in Google Maps
-// end::gAddress[]
+// end::googleAddress[]
 
 === Deleting a person : `delete`
 
@@ -430,9 +430,7 @@ There is no need to save manually.
 Clicking on the menu next to each person's names followed by clicking "Set Birthday" allows a birthdate to be
 added for a person. After selecting the birthdate in the date picker, the birthday label of the person has to be
 clicked on for the changes to be shown.
-
 image::get1.png[width="800"]
-
 image::get2.png[width="800"]
 
 

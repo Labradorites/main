@@ -468,7 +468,7 @@ Java files that have been modified: +
 - `Person.java` : Altered to get tags as a string. +
 - `ReadOnlyPerson.java`: Altered to get tags as a string. +
 
-image::findTagLogic.png[width="800"]
+image::findTagLogic.png[width="600"]
 
 // end::findTag[]
 
@@ -500,11 +500,14 @@ Searches for person's address on Google Maps by index in most recent listing. +
 Format: `gAddress INDEX`
 
 Person whose index is keyed in will have its address searched in the browser panel on Google Maps.
+<<<<<<< HEAD
 
 image::gAddressUI.png[width="800"]
 
 image::gAddressEvent.png[width="800"]
 
+=======
+>>>>>>> parent of 7a643e8... Update documentations
 // end::gAddress[]
 
 // tag::findletter[]
@@ -536,11 +539,19 @@ image::FBL2.png[width="800"]
 `listTags` does not display duplicate tags that are tagged to the contacts in the AddressBook and is sorted alphabetically.
 `listTags f` displays a list of unique tags of persons currently shown in the PersonListPanel.
 
+<<<<<<< HEAD
 Java files that have been modified: +
 - `Model` : Modified to include a signature in the Model interface for the getFilteredTagsList(), getNormalTagsList() method. Takes in no parameter and returns a List<Tag>. getTagsListAsString() is added to retrieve the list of tags as String. +
 - `ModelManager` : Modified to include the  getFilteredTagsList() and getNormalTagsList() methods that takes in no parameter and returns a List<Tag> that contains all tags. getTagsListAsString() takes in a List<Tag> and returns List<String>. +
 - `ListTagsCommand` : Created to convert the List<Tag> to strings by calling the above functions and print the list of tags in the ResultsDisplay box. +
 - `Tag` : modified to include an accessor for tagName. +
+=======
+Java files that have been modified:
+- 'Model': Modified to include a signature in the Model interface for the getFilteredTagsList(), getNormalTagsList() method. Takes in no parameter and returns a List<Tag>. getTagsListAsString() is added to retrieve the list of tags as String. +
+- 'ModelManager': Modified to include the  getFilteredTagsList() and getNormalTagsList() methods that takes in no parameter and returns a List<Tag> that contains all tags. getTagsListAsString() takes in a List<Tag> and returns List<String>. +
+- 'ListTagsCommand': Created to convert the List<Tag> to strings by calling the above functions and print the list of tags in the ResultsDisplay box. +
+- 'Tag': modified to include an accessor for tagName. +
+>>>>>>> parent of 7a643e8... Update documentations
 // end::listTags[]
 
 API : Logic.java
