@@ -1,5 +1,5 @@
 # henryheyhey92
-###### \java\seedu\address\ConfirmBox.java
+###### /java/seedu/address/ConfirmBox.java
 ``` java
 public class ConfirmBox {
     private static boolean answer;
@@ -48,7 +48,7 @@ public class ConfirmBox {
 }
 
 ```
-###### \java\seedu\address\logic\commands\LockCommand.java
+###### /java/seedu/address/logic/commands/LockCommand.java
 ``` java
 /**
  * lock application
@@ -73,7 +73,7 @@ public class LockCommand extends UndoableCommand {
     }
 
 ```
-###### \java\seedu\address\LoginBox.java
+###### /java/seedu/address/LoginBox.java
 ``` java
 /**
  * This is to create the login window.
@@ -173,7 +173,7 @@ public class LoginBox {
         return false;
     }
 ```
-###### \java\seedu\address\model\person\NameLetterContainsKeywordPredicate.java
+###### /java/seedu/address/model/person/NameLetterContainsKeywordPredicate.java
 ``` java
 //reused
 /**
